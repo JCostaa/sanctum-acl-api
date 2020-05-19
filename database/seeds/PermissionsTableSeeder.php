@@ -56,7 +56,7 @@ class PermissionsTableSeeder extends Seeder
     {
         return User::find(1)
             ? User::find(1)
-            : User::create(['name' => 'Admin', 'email' => 'admin@laralife.com']);
+            : User::create(['name' => 'Admin', 'email' => 'admin@laralife.com','password'=>'1ar4l1f5']);
     }
 
     /**

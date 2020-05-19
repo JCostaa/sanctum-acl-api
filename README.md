@@ -8,10 +8,9 @@ the same name of the route within any role he has
 * Install packaqe with composer `composer require juliocosta/lara-auth`
 * Publish seeder `php artisan vendor:publish --foce --tag ha-auth-seeds`
 * Add `has.acl` on routes with that you wish check permissions
-* Run `php artisan db:seed --class=PermissionsTableSeeder` to populate permissions table
-* Run `php artisan jwt:secret`
 * Run php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 * Run php artisan migrate
+* Run `php artisan db:seed --class=PermissionsTableSeeder` to populate permissions table
 
 
 ## Use
@@ -27,7 +26,7 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 ],
 ```
 * Add trait in  User model
-  ```bash
+```bash
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -35,7 +34,6 @@ class User extends Authenticatable
     use HasApiTokens, Notifiable;
 }
 ```
-
 * Add `has.acl` on your protected routes
 * Publish seeder `php artisan vendor:publish --foce --tag ha-auth-seeds`
 * Run `php artisan db:seed --class=PermissionsTableSeeder` to populate permissions table
