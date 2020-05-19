@@ -30,7 +30,7 @@ class PermissionsTableSeeder extends Seeder
     {
         return Role::find(1)
             ? Role::find(1)
-            : factory(Role::class)->create(['name' => 'Admin', 'description' => 'All privileges']);
+            : Role::create(['name' => 'Admin', 'description' => 'All privileges']);
     }
 
     /**
@@ -56,7 +56,7 @@ class PermissionsTableSeeder extends Seeder
     {
         return User::find(1)
             ? User::find(1)
-            : factory(User::class)->create(['name' => 'Admin', 'email' => 'admin@laravelha.com']);
+            : User::create(['name' => 'Admin', 'email' => 'admin@laralife.com']);
     }
 
     /**
@@ -77,7 +77,7 @@ class PermissionsTableSeeder extends Seeder
     private function shouldIgnore(Route $route): bool
     {
         return (
-            ! in_array('ha.acl', $route->gatherMiddleware()) ||
+            ! in_array('has.acl', $route->gatherMiddleware()) ||
             ! $route->uri ||
             ! Permission::whereIn('verb', $route->methods)->where('uri', $route->uri)
         );
