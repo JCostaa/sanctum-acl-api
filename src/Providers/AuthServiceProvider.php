@@ -68,10 +68,7 @@ class AuthServiceProvider extends ServiceProvider
     }
     protected function bootForConsole()
     {
-        $this->publishes([
-            self::ROOT_PATH . '/stubs/config/auth.stub' => config_path('auth.php'),
-        ], 'auth-config');
-
+    
         $permissionSeederPath = 'seeds/PermissionsTableSeeder.php';
         $this->publishes([
             self::ROOT_PATH . '/database/' . $permissionSeederPath => database_path($permissionSeederPath),
