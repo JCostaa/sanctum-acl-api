@@ -33,6 +33,9 @@ class AuthServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(self::ROOT_PATH . '/database/migrations');
         $this->loadFactoriesFrom(self::ROOT_PATH . '/database/factories');
         $this->registerPermissions();
+        if ($this->app->runningInConsole()) {
+            $this->bootForConsole();
+        }
     }
 
     /**
