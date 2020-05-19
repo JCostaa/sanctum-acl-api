@@ -6,7 +6,7 @@ the same name of the route within any role he has
 
 ## Install
 * Install packaqe with composer `composer require juliocosta/lara-auth`
-* Publish seeder `php artisan vendor:publish --foce --tag ha-auth-seeds`
+* Publish seeder `php artisan vendor:publish --force --tag auth-seeds`
 * Add `has.acl` on routes with that you wish check permissions
 * Run `php artisan db:seed --class=PermissionsTableSeeder` to populate permissions table
 * Run `php artisan jwt:secret`
