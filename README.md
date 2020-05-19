@@ -1,7 +1,7 @@
 # Sanctum Auth ACL
-JWT Auth ACL is a Laravel package to authentication and authorization package.
+Sacuntum Auth ACL is a Laravel package to authentication and authorization package.
 
-The middleware `ha.acl` check if auth user is authorized to access the route and he is authorized when has permission with 
+The middleware `has.acl` check if auth user is authorized to access the route and he is authorized when has permission with 
 the same name of the route within any role he has
 
 ## Install
