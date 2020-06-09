@@ -60,7 +60,7 @@ class AuthServiceProvider extends ServiceProvider
                 if (Schema::hasTable('permissions')) {
                     Permission::all()->map(function ($permission) {
                         Gate::define($permission->verb . '|' . $permission->uri, function ($user) use ($permission) {
-                            dd($user->existPermission($permission));
+                            return $user->existPermission($permission);
                         });
                     });
                 }
